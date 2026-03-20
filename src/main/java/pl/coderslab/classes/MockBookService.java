@@ -43,12 +43,17 @@ public class MockBookService {
         return null;
     }
 
-    public void update() {
-
+    public Book update(long id, Book updatedBook) {
+        Book existingBook = getBook(id);
+        existingBook.setIsbn(updatedBook.getIsbn());
+        existingBook.setTitle(updatedBook.getTitle());
+        existingBook.setAuthor(updatedBook.getAuthor());
+        existingBook.setPublisher(updatedBook.getPublisher());
+        existingBook.setType(updatedBook.getType());
+        return existingBook;
     }
 
-    public void delete(){
-
+    public void delete(long id){
     }
 
 }
