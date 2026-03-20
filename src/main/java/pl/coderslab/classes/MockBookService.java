@@ -54,6 +54,8 @@ public class MockBookService {
     }
 
     public void delete(long id){
+        Book bookToDelete = getBook(id);
+        list.remove(bookToDelete);
     }
 
 }
